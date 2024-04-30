@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 int main()
 {
@@ -18,17 +19,29 @@ int main()
     int i, j, k, loop;
 
     int amountOfTimes;
-    int length;
-    char printString[13];
+    int length, yes;
 
-    printf("How many triangle things in a row: \n");
+    char printString[13];
+    float time_spent;
+
+
+
+    printf("How many triangle things in a row: ");
     scanf("%d", &amountOfTimes);
 
-    printf("How long do you want it to last for approx (seconds): \n");
+    printf("\nHow long do you want it to last for approx (seconds): ");
     scanf("%d", &length);
+    yes = length;
 
 
-    for(i=0;i<(length*10);i++) {
+
+
+    clock_t begin = clock();
+
+
+
+    while(time_spent < yes){
+        i++;
         system("cls");
         for(j=0;j<lengthOfRows;j++) {
             printf("\n");
@@ -50,7 +63,11 @@ int main()
             }
 
         }
+
         usleep( 10000 );
+        clock_t end = clock();
+        time_spent = (float)(end - begin) / CLOCKS_PER_SEC;
+
     }
 
 
