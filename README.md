@@ -1,1 +1,1 @@
-Here are some C or C++ funny little scripts that I've made 
+Here are some funny little C or C++ scripts that I've made.
